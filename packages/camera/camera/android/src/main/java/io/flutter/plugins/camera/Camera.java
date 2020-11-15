@@ -239,6 +239,9 @@ public class Camera {
       captureBuilder.addTarget(pictureImageReader.getSurface());
       captureBuilder.set(CaptureRequest.JPEG_ORIENTATION, getMediaOrientation());
 
+      captureBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_MODE_AUTO);
+      captureBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER, CaptureRequest.CONTROL_AF_TRIGGER_START);
+
       cameraCaptureSession.capture(
           captureBuilder.build(),
           new CameraCaptureSession.CaptureCallback() {
